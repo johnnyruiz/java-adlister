@@ -12,7 +12,6 @@ public class HelloWorldServlet extends HttpServlet {
 
         String name = req.getParameter("name");
 
-        Integer counter = 0;
 
         if(name != null){
             out.println("Hello, " + name);
