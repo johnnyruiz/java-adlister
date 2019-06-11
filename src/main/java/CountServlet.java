@@ -18,7 +18,7 @@ public class CountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         count += 1;
-        out.println("Count " + count);
+        out.println("<h1>Count " + count + "<h1>");
         response.setContentType("text/html");
         out.println("<form method='Post'action=''><button>Reset</button>");
     }

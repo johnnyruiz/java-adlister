@@ -9,15 +9,17 @@ import java.io.PrintWriter;
 public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         PrintWriter out = res.getWriter();
+        res.setContentType("text/html");
 
         String name = req.getParameter("name");
 
 
         if(name != null){
-            out.println("Hello, " + name);
+            out.println("<h1>Hello, " + name + "</h1>");
         } else{
-            out.println("Hello, World");
+            out.println("<h1>Hello, World</h1>");
         }
+        out.println("<br><a href='http://localhost:8080/count'>Count</a>");
         
     }
     
