@@ -21,13 +21,18 @@
     <input type="password" name="passWord" id="passWord">
     <button>Submit</button>
 </form>
-
-<c:if test="${param.userName == 'admin'}">
-    <c:if test="${param.passWord == 'password'}">
-        <%response.sendRedirect("/profile.jsp");%>
+<c:if test="${param.userName !=null}">
+    <c:if test="${param.userName == 'admin'}">
+        <c:if test="${param.passWord == 'password'}">
+            <%response.sendRedirect("/profile.jsp");%>
+        </c:if>
+    </c:if>
+    <c:if test="${param.userName != 'admin'}">
+        <c:if test="${param.passWord != 'password'}">
+            <%response.sendRedirect("/login.jsp");%>
+        </c:if>
     </c:if>
 </c:if>
-
 
 
 
