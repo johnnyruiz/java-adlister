@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>Ads</h1>
+    <h3>Title: </h3>
+    <p>AdId:<span>User Id:</span></p>
+    <p>Description: </p>
+
 
 </body>
 </html>
