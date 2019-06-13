@@ -14,6 +14,10 @@ public class LoginServlet extends HttpServlet {
         request.getRequestDispatcher("/login.jsp").forward(request,response);
         HttpSession session = request.getSession();
 
+//        if(session.getAttribute("username") != null){
+//            boolean isAdmin = (boolean) session.getAttribute("username")
+//        }
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,6 +29,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 response.sendRedirect("/login?error=Invalid+Credentials");
             }
+
 
 
     }
