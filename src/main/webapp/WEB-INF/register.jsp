@@ -20,10 +20,13 @@
 <form action="/register" method="POST">
     <label for="userName" id="userName">Username</label>
     <input name="userName" type="text" placeholder="Create a username">
+
     <label for="userEmail" id="userEmail">Email</label>
     <input name="userEmail" type="email" placeholder="Insert Email">
+
     <label for="passWord">Password</label>
     <input name="passWord" id="passWord" type="password" placeholder="************">
+
     <button>Register</button>
 </form>
 

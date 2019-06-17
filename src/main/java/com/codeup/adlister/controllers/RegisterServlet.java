@@ -31,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
         );
         DaoFactory.getUsersDao().insert(user);
         try {
-            response.sendRedirect("/ads");
+            response.sendRedirect("/login");
         } catch (IOException e) {
             e.printStackTrace();
         }
