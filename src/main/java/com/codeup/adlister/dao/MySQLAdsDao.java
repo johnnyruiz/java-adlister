@@ -70,10 +70,12 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Ad searchAds(String name) {
         try{
-            PreparedStatement preparedStatement =
-                    connection.prepareStatement("SELECT * FROM ads WHERE title LIKE  ?");
-            preparedStatement.setString(1, name);
-            ResultSet rs = preparedStatement.executeQuery();
+            String sql = "SELECT * FROM ads WHERE title LIKE  ?";
+            String searchTermWithWildcards = "%" + name + "%";
+
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, searchTermWithWildcards);
+            ResultSet rs = stmt.executeQuery();
             rs.next();
             return extractAd(rs);
         }catch(SQLException e){
