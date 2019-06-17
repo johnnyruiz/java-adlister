@@ -10,15 +10,15 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1>Here Are all the ads!</h1>
+    <h1>Here are your ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>
-               <c:out value="${ad.title}"/>
+                 <c:out value = "${ads.title}"/>
             </h2>
             <p>
-               <c:out value="${ad.description}"/>
+                 <c:out value = "${ads.description}"/>
             </p>
         </div>
     </c:forEach>

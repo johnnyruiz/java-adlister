@@ -39,6 +39,8 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+
     @Override
     public Long insert(Ad ad) {
         try {
@@ -51,6 +53,34 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
+//instead of using ID use page and limit and offset by page number
+    @Override
+    public Ad findOne(long id) {
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
+            preparedStatement.setLong(1, id);
+            ResultSet rs = preparedStatement.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        }catch(SQLException e){
+            throw new RuntimeException("Error", e);
+        }
+    }
+
+    @Override
+    public Ad searchAds(String name) {
+        try{
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT * FROM ads WHERE title LIKE  ?");
+            preparedStatement.setString(1, name);
+            ResultSet rs = preparedStatement.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        }catch(SQLException e){
+            throw new RuntimeException("Error", e);
+        }
+    }
+
 
     private String createInsertQuery(Ad ad) {
         return "INSERT INTO ads(user_id, title, description) VALUES "
