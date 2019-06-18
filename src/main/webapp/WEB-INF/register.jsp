@@ -19,13 +19,13 @@
 
 <form action="/register" method="POST">
     <label for="userName" id="userName">Username</label>
-    <input name="userName" type="text" placeholder="Create a username">
+    <input name="userName" type="text" placeholder="Create a username" required>
 
     <label for="userEmail" id="userEmail">Email</label>
-    <input name="userEmail" type="email" placeholder="Insert Email">
+    <input name="userEmail" type="email" placeholder="Insert Email" required>
 
     <label for="passWord">Password</label>
-    <input name="passWord" id="passWord" type="password" placeholder="************">
+    <input name="passWord" id="passWord" type="password" placeholder="************" required>
 
     <button>Register</button>
 </form>

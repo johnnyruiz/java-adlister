@@ -30,8 +30,9 @@ public class RegisterServlet extends HttpServlet {
                 request.getParameter("passWord")
         );
         DaoFactory.getUsersDao().insert(user);
+        request.getSession().setAttribute("user", user);
         try {
-            response.sendRedirect("/login");
+            response.sendRedirect("/profile");
         } catch (IOException e) {
             e.printStackTrace();
         }

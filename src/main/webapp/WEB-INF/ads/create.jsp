@@ -9,6 +9,7 @@
     <div class="container">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
+            <h5 id="id">${sessionScope.user.id}</h5>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input id="title" name="title" class="form-control" type="text">
